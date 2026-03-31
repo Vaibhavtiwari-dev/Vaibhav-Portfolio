@@ -9,7 +9,7 @@ const ASSETS_TO_CACHE = [
   '/404.html',
   '/style.css?v=2.0',
   '/main.js?v=2.0',
-  '/favicon.svg',
+  '/favicon.png',
   '/profile.jpg'
 ];
 
