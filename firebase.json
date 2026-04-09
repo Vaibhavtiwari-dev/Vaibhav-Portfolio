@@ -6,6 +6,23 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "redirects": [
+      {
+        "source": "/about.html",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/projects.html",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/contact.html",
+        "destination": "/",
+        "type": 301
+      }
+    ],
     "headers": [
       {
         "source": "**/*.html",
@@ -16,6 +33,8 @@
           }
         ]
       }
-    ]
+    ],
+    "cleanUrls": true,
+    "trailingSlash": false
   }
 }

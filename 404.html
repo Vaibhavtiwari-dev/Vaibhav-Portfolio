@@ -1,77 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>404 - Page Not Found | Vaibhav Tiwari</title>
-    <meta name="theme-color" content="#030014" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Page Not Found | Vaibhav Tiwari</title>
+  <meta name="description" content="This page doesn't exist. Head back to Vaibhav Tiwari's portfolio." />
+  <meta name="theme-color" content="#FAFAF8" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-    <!-- Preload critical resources -->
-    <link rel="preload" href="style.css?v=2.0" as="style" />
-    <link rel="preload" href="main.js?v=2.0" as="script" />
+    :root {
+      --bg: #FAFAF8;
+      --fg: #1A1A18;
+      --fg-secondary: #6B6B63;
+      --fg-tertiary: #9C9C93;
+      --border-color: rgba(0,0,0,0.10);
+      --border: 0.5px solid var(--border-color);
+      --serif: 'Instrument Serif', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+      --mono: 'DM Mono', 'SF Mono', monospace;
+    }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="stylesheet" href="style.css?v=2.0" />
-  </head>
-  <body>
-    <!-- Skip to content for accessibility -->
-    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--fg);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
 
-    <div class="space-background"></div>
+    a { color: inherit; text-decoration: none; }
 
-    <header>
-      <div class="container nav-container">
-        <a href="index.html" class="logo text-gradient" aria-label="Home">VT</a>
-        <nav aria-label="Main navigation">
-          <ul class="nav-links" role="list">
-            <li role="listitem"><a href="about.html" class="nav-link">About</a></li>
-            <li role="listitem"><a href="index.html#skills" class="nav-link">Skills</a></li>
-            <li role="listitem"><a href="projects.html" class="nav-link">Projects</a></li>
-            <li role="listitem"><a href="contact.html" class="nav-link">Contact</a></li>
-          </ul>
-        </nav>
-        <button
-          class="mobile-menu-toggle"
-          aria-label="Toggle navigation menu"
-          aria-expanded="false"
-          aria-controls="nav-links"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <a href="resume.html" class="btn btn-primary header-resume-btn" aria-label="View Resume">Resume</a>
-      </div>
-    </header>
+    /* Nav */
+    .nav {
+      padding: 18px clamp(20px, 4vw, 48px);
+      border-bottom: var(--border);
+    }
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: -0.03em;
+    }
 
-    <main id="main-content" class="container page-main">
-      <section class="error-page">
-        <div class="error-code" aria-label="404 Error">404</div>
-        <h1 class="error-title">System Error: Page Not Found</h1>
-        <p class="error-description">
-          The coordinates you entered seem to lead to a black hole.
-          Let's get you back to safety.
-        </p>
-        <a href="index.html" class="btn btn-primary">
-          Return to Base &rarr;
-        </a>
-      </section>
-    </main>
+    /* Error content */
+    .error {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(40px, 8vw, 80px) clamp(20px, 4vw, 48px);
+    }
 
-    <footer>
-      <div class="container footer-content">
-        <div class="footer-main">
-          <p>&copy; <time datetime="2026">2026</time> Vaibhav Tiwari. Built with passion.</p>
-        </div>
-      </div>
-    </footer>
+    .error-inner {
+      text-align: center;
+      max-width: 480px;
+    }
 
-    <script src="main.js?v=2.0"></script>
-  </body>
+    .error-code {
+      font-family: var(--serif);
+      font-size: clamp(72px, 12vw, 120px);
+      font-weight: 400;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--fg-tertiary);
+      margin-bottom: 16px;
+    }
+
+    .error-title {
+      font-family: var(--serif);
+      font-size: clamp(24px, 3.5vw, 32px);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .error-desc {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--fg-secondary);
+      margin-bottom: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      padding: 12px 28px;
+      background: var(--fg);
+      color: var(--bg);
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.85; }
+
+    /* Footer */
+    .footer {
+      padding: 20px clamp(20px, 4vw, 48px);
+      border-top: var(--border);
+    }
+    .footer-text {
+      font-size: 12px;
+      color: var(--fg-tertiary);
+      font-family: var(--mono);
+      letter-spacing: 0.02em;
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <a href="/" class="nav-logo" aria-label="Home">VT</a>
+  </header>
+
+  <main class="error" id="main">
+    <div class="error-inner">
+      <div class="error-code" aria-hidden="true">404</div>
+      <h1 class="error-title">Page not found</h1>
+      <p class="error-desc">
+        The page you're looking for doesn't exist or has been moved.
+      </p>
+      <a href="/" class="btn" id="btn-404-home">Back to portfolio →</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p class="footer-text">© 2026 Vaibhav Tiwari</p>
+  </footer>
+</body>
 </html>
