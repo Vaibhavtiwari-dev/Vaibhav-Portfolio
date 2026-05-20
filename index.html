@@ -50,7 +50,7 @@
       --bg-card:        #ffffff;
       --fg:             #1a1a18;
       --fg-secondary:   #6b6b67;
-      --fg-tertiary:    #9e9e9a;
+      --fg-tertiary:    #767672;
       --border-color:   rgba(0, 0, 0, 0.12);
       --border:         0.5px solid rgba(0, 0, 0, 0.12);
       --green-bg:       #eaf3de;
@@ -96,6 +96,13 @@
 
     .skip { position: absolute; top: -100%; left: 16px; background: var(--cta-bg); color: var(--cta-fg); padding: 8px 16px; font-size: 13px; z-index: 999; }
     .skip:focus { top: 8px; }
+
+    /* Visual Keyboard Focus Ring */
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--fg);
+      outline-offset: 4px;
+    }
 
     .container { max-width: var(--max-w); margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
 
@@ -924,7 +931,7 @@
     <a href="mailto:vaibhav09012007@gmail.com" class="btn btn-dark">Book a call →</a>
   </nav>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
 
     <!-- ═══════════════════════════════════════════
          HERO
@@ -1189,19 +1196,45 @@
     /* Mobile menu */
     const hamburger = document.getElementById('nav-hamburger');
     const drawer = document.getElementById('mobile-drawer');
-    hamburger.addEventListener('click', () => {
-      const open = hamburger.classList.toggle('is-active');
+    const mainContent = document.getElementById('main');
+    const footer = document.getElementById('footer');
+
+    const toggleMenu = (open) => {
+      hamburger.classList.toggle('is-active', open);
       drawer.classList.toggle('is-open', open);
       hamburger.setAttribute('aria-expanded', String(open));
       hamburger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      
+      // Accessibility: manage background screen reader focus
+      if (open) {
+        mainContent.setAttribute('inert', '');
+        footer.setAttribute('inert', '');
+        // focus the first link inside drawer
+        const firstLink = drawer.querySelector('a');
+        if (firstLink) firstLink.focus();
+      } else {
+        mainContent.removeAttribute('inert');
+        footer.removeAttribute('inert');
+        hamburger.focus();
+      }
+    };
+
+    hamburger.addEventListener('click', () => {
+      const open = !drawer.classList.contains('is-open');
+      toggleMenu(open);
     });
+
     drawer.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        hamburger.classList.remove('is-active');
-        drawer.classList.remove('is-open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        hamburger.setAttribute('aria-label', 'Open menu');
+        toggleMenu(false);
       });
+    });
+
+    // Close on Escape key press
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drawer.classList.contains('is-open')) {
+        toggleMenu(false);
+      }
     });
   </script>
 </body>
