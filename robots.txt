@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /.firebase/
 
 Sitemap: https://vaibhav-portfolio-930c6.web.app/sitemap.xml
