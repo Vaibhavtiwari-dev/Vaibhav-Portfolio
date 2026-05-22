@@ -1104,8 +1104,9 @@
 
       .hero { padding: clamp(40px, 8vw, 64px) 0; }
 
-      .hero-actions { flex-direction: column; }
-      .hero-actions .btn { width: 100%; }
+      .hero-actions { flex-direction: column; gap: 16px; }
+      .hero-actions .btn-tactile,
+      .hero-actions .link-cv { width: 100%; text-align: center; }
 
       .stats-grid { grid-template-columns: 1fr 1fr; }
 
@@ -1122,6 +1123,60 @@
       .footer-links { flex-wrap: wrap; gap: 14px; }
 
       .tech-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
+
+      /* Redesigned 3D Work Grid Responsiveness */
+      .work-grid-3d {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .glass-card-3d,
+      .glass-card-floater,
+      .hero-stats-3d {
+        transform: none !important;
+      }
+      .glass-card-3d {
+        padding: 28px;
+      }
+      .glass-card-stack-specs {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .work-bottom-floaters {
+        gap: 24px !important;
+        margin-top: 24px !important;
+      }
+
+      /* Hero stats card spacing and flattening */
+      .hero-stats-3d {
+        margin-top: 24px;
+        max-width: 100%;
+      }
+
+      /* Redesigned Journey/Timeline Responsiveness */
+      .timeline-ribbon-wrapper {
+        display: none !important;
+      }
+      .timeline-row-3d {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .timeline-row-3d > div:empty {
+        display: none;
+      }
+      .timeline-left-col,
+      .timeline-right-col {
+        text-align: left;
+        align-items: flex-start;
+        padding-top: 0 !important;
+      }
+      .timeline-box-3d {
+        max-width: 100%;
+      }
+
+      /* Redesigned Process cards alignment */
+      .process-container > div {
+        justify-content: center !important;
+      }
     }
 
     /* ──────────────────────────────────────────
@@ -1133,6 +1188,24 @@
       .project-metrics { grid-template-columns: 1fr; }
       .metric { border-right: none !important; border-bottom: var(--border); }
       .metric:last-child { border-bottom: none; }
+
+      /* Contact form popup modal spacing */
+      .contact-modal {
+        padding: 28px 20px;
+      }
+      /* Project spec items in 1 column on very narrow viewports */
+      .glass-card-stack-specs {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .glass-card-footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .glass-card-links {
+        width: 100%;
+        justify-content: space-between;
+      }
     }
     /* ──────────────────────────────────────────
        PROCESS GRID & CUSTOM CLAYMORPHISM
