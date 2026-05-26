@@ -46,7 +46,7 @@
     "image": "https://vaibhav-portfolio-930c6.web.app/og-image.png",
     "email": "mailto:vaibhav09012007@gmail.com",
     "sameAs": [
-      "https://github.com/vaibhav09012007-design",
+      "https://github.com/Vaibhavtiwari-dev",
       "https://linkedin.com/in/vaibhav-tiwari",
       "https://x.com/AsterismVaibhav"
     ],
@@ -708,6 +708,37 @@
       50% { opacity: 0.4; transform: scale(0.9); }
     }
 
+    /* Glowing In Development badge */
+    .badge-dev-glow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #f59e0b;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      padding: 4px 10px;
+      border-radius: 99px;
+    }
+
+    .badge-dev-dot-glow {
+      width: 6px;
+      height: 6px;
+      background: #f59e0b;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #f59e0b, 0 0 20px rgba(245, 158, 11, 0.4);
+      animation: pulse-glow-amber 1.8s infinite;
+    }
+
+    @keyframes pulse-glow-amber {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.9); }
+    }
+
     .glass-card-3d .project-desc {
       font-size: 15px;
       line-height: 1.7;
@@ -827,6 +858,28 @@
       padding: 20px 24px;
       transform: rotateY(-10deg) rotateX(1deg);
       box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s;
+    }
+    .glass-card-floater:hover {
+      box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.35),
+        inset 1px 1px 0 rgba(255, 255, 255, 0.1);
+    }
+        .glass-card-floater.light-glass {
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.04),
+        inset 1px 1px 0 rgba(255, 255, 255, 0.6);
+    }
+    .glass-card-floater.light-glass:hover {
+      background: rgba(255, 255, 255, 0.85);
+      border-color: rgba(0, 0, 0, 0.12);
+      box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.08),
+        inset 1px 1px 0 rgba(255, 255, 255, 0.8);
     }
     .glass-card-floater .project-tag {
       margin-bottom: 8px;
@@ -1146,7 +1199,7 @@
 
       .tech-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
 
-      /* Redesigned 3D Work Grid Responsiveness */
+            /* Redesigned 3D Work Grid Responsiveness */
       .work-grid-3d {
         grid-template-columns: 1fr;
         gap: 32px;
@@ -1556,11 +1609,11 @@
           <h1 class="hero-headline">
             <span class="hero-line" style="display:block">Vaibhav /</span>
             <span class="hero-line" style="display:block">Tiwari /</span>
-            <span class="hero-line" style="display:block"><em>builds things</em></span>
+            <span class="hero-line" style="display:block"><em>ships production-grade systems</em></span>
           </h1>
 
           <p class="hero-sub">
-            Full-stack developer who designs reliable full-stack architectures and builds responsive user experiences backed by rigorous automated testing. Based in India.
+            Full-stack engineer who ships tested, documented, deployed software. React, Next.js, TypeScript, Python, PostgreSQL, and AI integration. Based in India.
           </p>
 
           <div class="hero-actions">
@@ -1574,8 +1627,8 @@
             <span class="label">By the numbers</span>
             <div class="stats-list">
               <div class="stat-row" id="stat-shipped">
-                <div class="stat-row-val">1</div>
-                <div class="stat-row-lbl">Shipped product</div>
+                <div class="stat-row-val">3</div>
+                <div class="stat-row-lbl">Projects Built</div>
               </div>
               <div class="stat-row" id="stat-solo">
                 <div class="stat-row-val">Solo</div>
@@ -1596,24 +1649,59 @@
     </section>
 
     <!-- ═══════════════════════════════════════════
-         TECH STRIP
+         TECH STACK
          ═══════════════════════════════════════════ -->
-    <section class="tech-strip scroll-reveal" id="stack" aria-label="Technology stack">
-      <div class="container tech-inner">
-        <span class="label">Stack</span>
-        <div class="tech-pills">
-          <span class="pill">React.js</span>
-          <span class="pill">Next.js</span>
-          <span class="pill">TypeScript</span>
-          <span class="pill">Node.js</span>
-          <span class="pill">Python</span>
-          <span class="pill">PostgreSQL</span>
-          <span class="pill">Tailwind CSS</span>
-          <span class="pill">Drizzle ORM</span>
-          <span class="pill">Gemini AI</span>
-          <span class="pill">Docker</span>
-          <span class="pill">Vitest</span>
-          <span class="pill">Firebase</span>
+        <section class="tech-stack scroll-reveal" id="stack" aria-label="Technology stack" style="padding: var(--section-py) 0; background: var(--bg-light); border-bottom: 1px solid var(--border-light); position: relative; z-index: 10;">
+      <div class="container">
+        <div class="work-header" style="margin-bottom: 56px; text-align: center;">
+          <p class="label">Expertise</p>
+          <h2 class="section-heading" style="font-family: var(--serif); font-size: clamp(32px, 5vw, 42px); font-weight: 600; color: var(--fg-light); margin-top: 12px;">Technical Stack</h2>
+        </div>
+
+        <div class="tech-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; perspective: 1500px;">
+          <!-- Card 1: Frontend -->
+          <div class="glass-card-floater light-glass scroll-reveal" style="will-change: transform; transform: rotateY(-8deg) rotateX(1deg);">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+              <h3 style="font-family: var(--serif); font-size: 22px; font-weight: 600; color: var(--fg-light); margin-bottom: 0;">Frontend</h3>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+              <span class="pill">React.js</span>
+              <span class="pill">Next.js</span>
+              <span class="pill">TypeScript</span>
+              <span class="pill">Tailwind CSS</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Backend & AI -->
+          <div class="glass-card-floater light-glass scroll-reveal" style="will-change: transform; transform: rotateY(0deg) rotateX(2deg);">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+              <h3 style="font-family: var(--serif); font-size: 22px; font-weight: 600; color: var(--fg-light); margin-bottom: 0;">Backend & AI</h3>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+              <span class="pill">Node.js</span>
+              <span class="pill">Python</span>
+              <span class="pill">FastAPI</span>
+              <span class="pill">PostgreSQL</span>
+              <span class="pill">Drizzle ORM</span>
+              <span class="pill">LangChain</span>
+              <span class="pill">Gemini AI</span>
+            </div>
+          </div>
+
+          <!-- Card 3: DevOps & Quality -->
+          <div class="glass-card-floater light-glass scroll-reveal" style="will-change: transform; transform: rotateY(8deg) rotateX(1deg);">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+              <h3 style="font-family: var(--serif); font-size: 22px; font-weight: 600; color: var(--fg-light); margin-bottom: 0;">DevOps & Quality</h3>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+              <span class="pill">Docker</span>
+              <span class="pill">Vitest</span>
+              <span class="pill">Playwright</span>
+              <span class="pill">Firebase</span>
+              <span class="pill">Vercel</span>
+              <span class="pill">Sentry</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1716,45 +1804,48 @@
               </div>
               <div class="glass-card-links">
                 <a href="https://mindsync-app-opal.vercel.app/" target="_blank" rel="noopener noreferrer" class="glass-card-btn" id="link-mindsync-live">Try it live →</a>
-                <a href="https://github.com/vaibhav09012007-design/Mind-Sync" target="_blank" rel="noopener noreferrer" class="link-arrow glass-card-link-arrow" id="link-mindsync-github">View on GitHub</a>
+                <a href="https://github.com/Vaibhavtiwari-dev/Mind-Sync" target="_blank" rel="noopener noreferrer" class="link-arrow glass-card-link-arrow" id="link-mindsync-github">View on GitHub</a>
               </div>
             </div>
           </article>
 
           <!-- Right Side Column (Side Panel) -->
           <div class="glass-side-panel">
-            <!-- Floater 1: Drizzle ORM Project -->
+            <!-- Floater 1: ARIA- -->
             <div class="glass-card-floater scroll-reveal" style="will-change: transform;">
-              <p class="project-tag">Backend · Tooling</p>
-              <h4 class="project-title" style="font-family: var(--serif); font-size: 20px; font-weight: 600; color: #fff; margin-bottom: 6px;">Drizzle ORM Project</h4>
+              <p class="project-tag">AI · RAG · Full-Stack</p>
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+                <h4 class="project-title" style="font-family: var(--serif); font-size: 20px; font-weight: 600; color: #fff; margin-bottom: 0;">Aria</h4>
+                <span class="badge-dev-glow"><span class="badge-dev-dot-glow" aria-hidden="true"></span>In Dev</span>
+              </div>
               <p class="glass-card-floater-desc">
-                High-performance database mapping layer with type-safe query building and auto-migrations.
+                Production-grade RAG pipeline for document Q&A with cited answers. Celery + Redis async processing, ChromaDB vector search, streaming WebSocket responses.
               </p>
+              <a href="https://github.com/Vaibhavtiwari-dev/ARIA-" target="_blank" rel="noopener noreferrer" class="link-arrow glass-card-link-arrow" id="link-aria-github" style="font-size: 12px; margin-top: 10px; display: inline-block;">View on GitHub</a>
             </div>
 
-            <!-- Floater 2: Your Next Project (CTA) -->
-            <div class="glass-card-floater cta scroll-reveal" id="card-cta" style="will-change: transform;">
-              <p class="project-tag">Freelance · Client Work</p>
-              <h4 class="project-title" style="font-family: var(--serif); font-size: 22px; font-weight: 600; color: #fff; margin-bottom: 6px;">Your Next Project</h4>
+            <!-- Floater 2: EuroGrant AI -->
+            <div class="glass-card-floater scroll-reveal" style="will-change: transform;">
+              <p class="project-tag">AI · SaaS · B2B</p>
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+                <h4 class="project-title" style="font-family: var(--serif); font-size: 20px; font-weight: 600; color: #fff; margin-bottom: 0;">EuroGrant AI</h4>
+                <span class="badge-dev-glow"><span class="badge-dev-dot-glow" aria-hidden="true"></span>In Dev</span>
+              </div>
               <p class="glass-card-floater-desc">
-                Got a product idea, a startup MVP, or a legacy app that needs a refresh? Let's build it.
+                Architected a B2B SaaS platform automating EU grant discovery and proposal generation — decoupled message queue architecture, Pinecone semantic search, Stripe subscriptions, GDPR-compliant AWS hosting.
               </p>
-              <button class="btn-dark-pill js-contact-trigger">Start a conversation →</button>
+              <a href="https://github.com/Vaibhavtiwari-dev/EuroGrant--AI" target="_blank" rel="noopener noreferrer" class="link-arrow glass-card-link-arrow" id="link-eurogrant-github" style="font-size: 12px; margin-top: 10px; display: inline-block;">View on GitHub</a>
             </div>
           </div>
         </div>
 
-        <!-- Bottom row of cards (angled 3D gallery expansion) -->
-        <div class="work-bottom-floaters scroll-reveal" style="display: flex; gap: 40px; margin-top: 40px; perspective: 1500px; justify-content: space-between; flex-wrap: wrap;">
-             <div class="glass-card-floater" style="flex: 1; min-width: 280px; transform: rotateY(10deg) rotateX(2deg); will-change: transform;">
-                <p class="project-tag">Systems · CLI</p>
-                <h4 class="project-title" style="font-family: var(--serif); font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 6px;">Drizzle ORM Tooling</h4>
-                <p class="glass-card-floater-desc">Custom CLI migrator to inspect schema drift and output optimized SQL scripts.</p>
-             </div>
-             <div class="glass-card-floater" style="flex: 1; min-width: 280px; transform: rotateY(-10deg) rotateX(2deg); will-change: transform;">
-                <p class="project-tag">Frontend · Library</p>
-                <h4 class="project-title" style="font-family: var(--serif); font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 6px;">Tailwind CSS Dashboard</h4>
-                <p class="glass-card-floater-desc">Custom design tokens and component library for complex enterprise dashboards.</p>
+        <!-- Bottom CTA row (Your Next Project) -->
+        <div class="work-bottom-floaters scroll-reveal" style="display: flex; gap: 40px; margin-top: 40px; perspective: 1500px; justify-content: center;">
+             <div class="glass-card-floater cta" id="card-cta" style="flex: 1; max-width: 680px; will-change: transform; text-align: center;">
+                <p class="project-tag" style="font-family: var(--mono); font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--fg-muted-dark); margin-bottom: 8px;">Freelance · Client Work</p>
+                <h4 class="project-title" style="font-family: var(--serif); font-size: 22px; font-weight: 600; color: #fff; margin-bottom: 6px;">Your Next Project</h4>
+                <p class="glass-card-floater-desc" style="max-width: 480px; margin: 0 auto 16px;">Got a product idea, a startup MVP, or a legacy app that needs a refresh? Let's build it.</p>
+                <button class="btn-dark-pill js-contact-trigger" style="width: auto; max-width: 280px; margin: 14px auto 0; display: inline-flex; justify-content: center; font-weight: 600; padding: 10px 24px; border-radius: 99px;">Start a conversation →</button>
              </div>
         </div>
       </div>
@@ -1771,10 +1862,16 @@
           </h2>
         </div>
 
+        <div class="engineering-standard-callout scroll-reveal" style="text-align: center; margin-bottom: 40px;">
+          <p style="font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; color: var(--fg-muted-light); line-height: 1.8; max-width: 640px; margin: 0 auto; padding: 16px 24px; background: rgba(0,0,0,0.02); border: 1px solid var(--border-light); border-radius: 12px;">
+            Every project follows a documented engineering standard — automated testing, security review, surgical code changes, and goal-driven execution. See <a href="https://github.com/Vaibhavtiwari-dev/Vaibhav-Portfolio/blob/main/GEMINI.md" target="_blank" style="text-decoration: underline; color: inherit;">GEMINI.md</a>.
+          </p>
+        </div>
+
         <div class="journey-container">
           <!-- Winding SVG Ribbon Background -->
           <div class="timeline-ribbon-wrapper">
-             <svg class="timeline-ribbon-svg" viewBox="0 0 400 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+             <svg class="timeline-ribbon-svg" viewBox="0 0 400 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
                <defs>
                  <linearGradient id="ribbonGradient" x1="0" y1="0" x2="1" y2="1">
                    <stop offset="0%" stop-color="#ffffff" />
@@ -1788,11 +1885,11 @@
                </defs>
                
                <!-- Ribbon Path Shadow (Offset slightly) -->
-               <path d="M 220,50 C 90,80 80,180 220,210 C 350,230 360,330 220,360 C 80,380 70,480 220,510 C 350,530 360,630 220,660 C 130,680 150,750 200,800" 
+               <path d="M 220,50 C 90,80 80,180 220,210 C 350,230 360,330 220,360 C 80,380 70,480 220,510 C 350,530 360,630 220,660 C 80,680 70,780 220,810 C 350,830 360,930 220,960 C 130,980 150,1050 200,1100" 
                      stroke="rgba(0,0,0,0.04)" stroke-width="46" stroke-linecap="round" fill="none" transform="translate(4, 8)" />
                      
                <!-- Main Ribbon Path -->
-               <path d="M 220,50 C 90,80 80,180 220,210 C 350,230 360,330 220,360 C 80,380 70,480 220,510 C 350,530 360,630 220,660 C 130,680 150,750 200,800" 
+               <path d="M 220,50 C 90,80 80,180 220,210 C 350,230 360,330 220,360 C 80,380 70,480 220,510 C 350,530 360,630 220,660 C 80,680 70,780 220,810 C 350,830 360,930 220,960 C 130,980 150,1050 200,1100" 
                      stroke="url(#ribbonGradient)" stroke-width="44" stroke-linecap="round" fill="none" />
                      
                <!-- Metal Nodes/Terminators -->
@@ -1808,8 +1905,14 @@
                  <line x1="8" y1="0" x2="8" y2="24" stroke="rgba(0,0,0,0.15)" stroke-width="1.5" />
                  <line x1="32" y1="0" x2="32" y2="24" stroke="rgba(0,0,0,0.15)" stroke-width="1.5" />
                </g>
-               <!-- Bottom Node -->
+               <!-- Node 3 -->
                <g transform="translate(200, 645)">
+                 <rect x="0" y="0" width="40" height="24" rx="4" fill="#d2d2d0" stroke="rgba(255,255,255,0.8)" stroke-width="1" />
+                 <line x1="8" y1="0" x2="8" y2="24" stroke="rgba(0,0,0,0.15)" stroke-width="1.5" />
+                 <line x1="32" y1="0" x2="32" y2="24" stroke="rgba(0,0,0,0.15)" stroke-width="1.5" />
+               </g>
+               <!-- Node 4 (Bottom) -->
+               <g transform="translate(200, 945)">
                  <rect x="0" y="0" width="40" height="24" rx="4" fill="#d2d2d0" stroke="rgba(255,255,255,0.8)" stroke-width="1" />
                  <line x1="8" y1="0" x2="8" y2="24" stroke="rgba(0,0,0,0.15)" stroke-width="1.5" />
                  <line x1="32" y1="0" x2="32" y2="24" stroke="rgba(0,0,0,0.15)" stroke-width="1.5" />
@@ -1841,16 +1944,28 @@
              <div class="timeline-right-col"></div>
           </div>
           
-          <!-- Row 3: B.Tech Electrical Engineering (Right) -->
+          <!-- Row 3: Built Aria (Right) -->
           <div class="timeline-row-3d">
              <div class="timeline-left-col"></div>
              <div class="timeline-right-col" style="padding-top: 40px;">
                 <div class="timeline-box-3d scroll-reveal">
-                   <h4 class="title">B.Tech Electrical Engineering — JSS Noida</h4>
-                   <span class="date">2026 – Present</span>
-                   <p class="desc">1st-year Electrical Engineering. Actively learning Data Structures, Algorithms, and Systems Architecture. Maintaining a focused, rigorous academic foundation alongside building products.</p>
+                   <h4 class="title">Built Aria — AI Document Intelligence</h4>
+                   <span class="date">2026</span>
+                   <p class="desc">Built a production RAG pipeline — document ingestion, async processing via Celery + Redis, vector search with ChromaDB, streaming WebSocket responses. Designed for real latency targets, not just demos.</p>
                 </div>
              </div>
+          </div>
+          
+          <!-- Row 4: Architected EuroGrant AI (Left) -->
+          <div class="timeline-row-3d">
+             <div class="timeline-left-col" style="padding-top: 40px;">
+                <div class="timeline-box-3d scroll-reveal">
+                   <h4 class="title">Architected EuroGrant AI</h4>
+                   <span class="date">2026</span>
+                   <p class="desc">Architected a B2B SaaS platform automating EU grant discovery and proposal generation — decoupled message queue architecture, Pinecone semantic search, Stripe subscriptions, GDPR-compliant AWS hosting.</p>
+                </div>
+             </div>
+             <div class="timeline-right-col"></div>
           </div>
         </div>
       </div>
@@ -1899,8 +2014,8 @@
           <div style="display: flex; justify-content: flex-start; width: 100%; position: relative; z-index: 5;">
             <div class="process-card scroll-reveal" id="step-understand">
               <p class="process-num">01</p>
-              <h3 class="process-title" style="font-family: var(--serif); font-size: 20px; font-weight: 600; color: var(--fg-light); margin-bottom: 12px;">Understand</h3>
-              <p class="process-desc" style="font-size: 14px; line-height: 1.6; color: var(--fg-muted-light);">Deep dive into the core problem and user needs. Define constraints, deliverables, and align on a detailed engineering roadmap before writing a single line of code.</p>
+              <h3 class="process-title" style="font-family: var(--serif); font-size: 20px; font-weight: 600; color: var(--fg-light); margin-bottom: 12px;">Define Success Criteria</h3>
+              <p class="process-desc" style="font-size: 14px; line-height: 1.6; color: var(--fg-muted-light);">Every project starts with verifiable goals. What does "done" look like? I define acceptance tests, success metrics, and scope boundaries before writing code.</p>
             </div>
           </div>
           
@@ -1908,8 +2023,8 @@
           <div style="display: flex; justify-content: flex-end; width: 100%; position: relative; z-index: 5;">
             <div class="process-card scroll-reveal" id="step-build">
               <p class="process-num">02</p>
-              <h3 class="process-title" style="font-family: var(--serif); font-size: 20px; font-weight: 600; color: var(--fg-light); margin-bottom: 12px;">Build</h3>
-              <p class="process-desc" style="font-size: 14px; line-height: 1.6; color: var(--fg-muted-light);">Clean architecture, modern tech stack, and fast iteration cycles. We build tested, modular code and refine functionality continuously through real-world feedback.</p>
+              <h3 class="process-title" style="font-family: var(--serif); font-size: 20px; font-weight: 600; color: var(--fg-light); margin-bottom: 12px;">Engineer Production-First</h3>
+              <p class="process-desc" style="font-size: 14px; line-height: 1.6; color: var(--fg-muted-light);">No prototypes disguised as products. Clean architecture, automated tests, CI/CD, error monitoring, and security review — built in from day one, not bolted on after.</p>
             </div>
           </div>
           
@@ -1917,13 +2032,20 @@
           <div style="display: flex; justify-content: flex-start; width: 100%; position: relative; z-index: 5;">
             <div class="process-card scroll-reveal" id="step-deliver">
               <p class="process-num">03</p>
-              <h3 class="process-title" style="font-family: var(--serif); font-size: 20px; font-weight: 600; color: var(--fg-light); margin-bottom: 12px;">Deliver</h3>
-              <p class="process-desc" style="font-size: 14px; line-height: 1.6; color: var(--fg-muted-light);">Fully tested, documented, and deployed. I walk through the system to ensure smooth handoff and stay close until the product is live and the client is completely confident.</p>
+              <h3 class="process-title" style="font-family: var(--serif); font-size: 20px; font-weight: 600; color: var(--fg-light); margin-bottom: 12px;">Deliver with Evidence</h3>
+              <p class="process-desc" style="font-size: 14px; line-height: 1.6; color: var(--fg-muted-light);">Test suites passing. Zero lint warnings. Deployed and monitored. I hand over systems with documentation, architecture diagrams, and proof that everything works.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Credential -->
+    <div class="scroll-reveal" style="text-align: center; padding: 32px 0 0; margin-top: 20px;">
+      <p style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--fg-muted-light);">
+        B.Tech Electrical Engineering — JSS Academy of Technical Education, Noida (2026–Present)
+      </p>
+    </div>
 
   </main>
 
@@ -1932,7 +2054,7 @@
       <span class="footer-name" style="font-family: var(--serif); font-size: 18px; font-weight: 600; color: var(--fg-light);">Vaibhav Tiwari</span>
       <nav class="footer-links" aria-label="Footer links">
         <div class="social-tokens">
-          <a href="https://github.com/vaibhav09012007-design" target="_blank" rel="noopener noreferrer" class="social-token-btn" id="link-footer-github" aria-label="GitHub Profile">
+          <a href="https://github.com/Vaibhavtiwari-dev" target="_blank" rel="noopener noreferrer" class="social-token-btn" id="link-footer-github" aria-label="GitHub Profile">
             <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482C19.138 20.193 22 16.44 22 12.017 22 6.484 17.522 2 12 2z"/></svg>
           </a>
           <a href="https://linkedin.com/in/vaibhav-tiwari" target="_blank" rel="noopener noreferrer" class="social-token-btn" id="link-footer-linkedin" aria-label="LinkedIn Profile">
@@ -2175,7 +2297,7 @@
        3D PARALLAX HOVER EFFECT
        ────────────────────────────────────────── */
     const maxTilt = 10; // max tilt degrees (user-approved)
-    const cards3d = document.querySelectorAll('.glass-card-3d, .hero-stats-3d, .work-bottom-floaters .glass-card-floater');
+    const cards3d = document.querySelectorAll('.glass-card-3d, .hero-stats-3d, .glass-card-floater');
 
     // Track default rest state transformations
     const getRestTransform = (element) => {
@@ -2192,7 +2314,7 @@
       return '';
     };
 
-    cards3d.forEach(card => {
+        cards3d.forEach(card => {
       const restTransform = getRestTransform(card);
       
       card.addEventListener('mousemove', (e) => {
@@ -2217,7 +2339,8 @@
       card.addEventListener('mouseleave', () => {
         card.style.transform = restTransform;
       });
-    });
+    }););
+    }
   </script>
 </body>
 </html>
