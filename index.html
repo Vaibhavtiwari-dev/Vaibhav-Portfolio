@@ -1284,12 +1284,12 @@
         grid-template-columns: 1fr;
         gap: 32px;
       }
-      .glass-card-3d,
-      .glass-card-floater,
-      .hero-stats-3d,
-      .tech-cylinder-wrapper,
-      .tech-cylinder-wrapper .pill,
-      .card-bg-pattern {
+      body:not(.gyro-active) .glass-card-3d,
+      body:not(.gyro-active) .glass-card-floater,
+      body:not(.gyro-active) .hero-stats-3d,
+      body:not(.gyro-active) .tech-cylinder-wrapper,
+      body:not(.gyro-active) .tech-cylinder-wrapper .pill,
+      body:not(.gyro-active) .card-bg-pattern {
         transform: none !important;
       }
       .tech-cylinder-wrapper {
@@ -1644,7 +1644,8 @@
       opacity: 1;
       transform: translateY(0);
     }
-  </style>
+
+      </style>
 </head>
 <body>
   <a href="#main" class="skip">Skip to main content</a>
@@ -2065,7 +2066,7 @@
                 <div class="timeline-box-3d scroll-reveal">
                    <h4 class="title">Shipped Mind-Sync</h4>
                    <span class="date">2025</span>
-                   <p class="desc">Built and shipped a solo full-stack AI product. Designed database schemas, wrote clean server APIs, integrated Gemini AI, and implemented comprehensive automated test coverage (109 tests, 164 commits).</p>
+                   <p class="desc">Built and shipped a solo full-stack AI product. Designed database schemas, wrote clean server APIs, integrated Gemini AI, and implemented comprehensive automated test coverage (193 tests, 223 commits).</p>
                 </div>
              </div>
              <div class="timeline-right-col"></div>
@@ -2503,6 +2504,7 @@
         techWrapper.style.transform = 'rotateY(0deg) rotateX(0deg)';
       });
     }
-  </script>
+
+      </script>
 </body>
 </html>
